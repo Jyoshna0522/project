@@ -1,0 +1,65 @@
+package com.stepdefinition;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+import com.practice.Nyka.Baseclass;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Stepdefinition extends Baseclass {
+	@Given("user can enter into homepage of nykaa")
+	public void user_can_enter_into_homepage_of_nykaa() throws InterruptedException {
+		Browser_launch();
+		Maximization();
+		get_url("https://www.nykaa.com");
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		WebElement signin =driver.findElement(By.xpath("//button[text()='Sign in']"));
+		signin.click();
+		WebElement mob =driver.findElement(By.xpath("//button[text()='Sign in with Mobile Number']")); 
+		mob.click();
+	}
+
+	@When("user can enter the email address")
+	public void user_can_enter_the_email_address() throws InterruptedException {
+		WebElement mobno = driver.findElement(By.name("emailMobile"));
+		mobno.sendKeys("8124891252");
+		WebElement proceedbutton = driver.findElement(By.id("submitVerification"));
+		proceedbutton.click();
+		Thread.sleep(3000);
+		
+		Thread.sleep(30000);
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+	}
+	@Then("Signup successfully")
+	public void signup_successfully() {
+		System.out.println("Logged In sucessfully");
+		}
+	
+	@Given("User can select a particular product")
+	public void user_can_select_a_particular_product() throws InterruptedException {
+		Thread.sleep(5000);
+		Actions sj= new Actions(driver);
+		Thread.sleep(5000);
+
+		WebElement findelement = driver.findElement(By.xpath("//a[text()='mom & baby']"));
+		sj.moveToElement(findelement).perform()	;
+		Thread.sleep(5000);
+		}
+
+	@When("User can select one item")
+	public void user_can_select_one_item() throws InterruptedException {
+		Thread.sleep(5000);
+	driver.findElement(By.xpath("//a[text()='Eyeliner']")).click();
+	}
+	@Then("Add to bag")
+	public void add_to_bag() {
+	}
+
+}

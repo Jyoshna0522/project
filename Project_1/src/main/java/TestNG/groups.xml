@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Automation testing">
+	<test name="test case">
+		<groups>
+			<run>
+				<include name="Qualification"></include>
+				<include name="Requirement"></include>
+				<classes>
+					<class name="TestNG.Grouping"></class>
+				</classes>
+			</run>
+			
+		</groups>
+		
+	</test>
+</suite>

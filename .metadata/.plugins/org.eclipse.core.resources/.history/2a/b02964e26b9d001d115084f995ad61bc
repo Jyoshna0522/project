@@ -1,0 +1,40 @@
+package com.stepdefinition;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import com.practice.Nyka.Baseclass;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class Stepdefinition extends Baseclass {
+	@Given("user can enter into homepage of nykaa")
+	public void user_can_enter_into_homepage_of_nykaa() throws InterruptedException {
+		Browser_launch();
+		Maximization();
+		get_url("https://www.nykaa.com");
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		WebElement signin =driver.findElement(By.xpath("//button[@text()='Sign in']"));
+		signin.click();
+		Actions ref = new Actions(driver);
+		ref.moveToElement(signin).perform();
+		WebElement mob =driver.findElement(By.xpath("//button[text()='Sign in with Mobile Number']"));  // doubt sir
+		ref.moveToElement(mob).perform();
+		mob.click();
+	}
+
+	@When("user can enter the email address")
+	public void user_can_enter_the_email_address() {
+	}
+
+	@When("user can enter the OTP")
+	public void user_can_enter_the_otp() {
+	}
+//check the xpath ok bye
+	//thank u so much sir bye
+	//@text 
+}

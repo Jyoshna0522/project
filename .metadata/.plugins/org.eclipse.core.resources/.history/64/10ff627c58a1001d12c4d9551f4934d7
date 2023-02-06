@@ -1,0 +1,36 @@
+package com.practice.Nyka;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class pageobjectmodel {
+	public static WebDriver driver;
+	public pageobjectmodel(WebDriver driver) {
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+	}
+@FindBy(id="email")
+private WebElement username;
+@FindBy(id="pass")
+private WebElement password;
+@FindBy(name="login")
+private WebElement click_login;
+public WebElement getUsername() {
+	return username;
+}
+
+public WebElement getPassword() {
+	return password;
+}
+
+public WebElement getClick_login() {
+	return click_login;
+}
+
+public static WebDriver getDriver() {
+	return driver;
+}
+
+}

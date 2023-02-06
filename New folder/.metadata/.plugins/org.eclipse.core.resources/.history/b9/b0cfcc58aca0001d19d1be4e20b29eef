@@ -1,0 +1,10 @@
+
+
+Feature: To Book an hotel room
+Scenario: Signup into adactin app 
+Given: user can enter into Homepage
+ When: User can enter into username and password
+ And: user can click the loginbutton
+ Then: Successfully login
+
+  

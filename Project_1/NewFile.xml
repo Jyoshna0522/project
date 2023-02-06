@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Jyoshna Test Automation Suite">
+<test name = "Adactin Hotel App Test cases">
+<parameter name="username" value="Jyoshnasuresh@gmail.com"></parameter>
+		<parameter name="loginbutton" value="click">
+		</parameter>
+		
+		<classes>
+			<class name = "simple_annotations.Logintest">
+			</class>
+		</classes>
+	</test>
+</suite>
+	
+	
+	
+	
+	
+	 
+	
+	

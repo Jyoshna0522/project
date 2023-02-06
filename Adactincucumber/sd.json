@@ -1,0 +1,21 @@
+{
+  "employees": [
+    {
+      "first_name": "Mani",
+    "last_name": "Kandan",
+    "email": "mani@gmail.com",
+    "id": 1
+    {
+      "first_name": "Raj",
+    "last_name": "Kumar",
+    "email": "raj@gamil.com",
+    "id": 2
+    },
+    {
+      "id": 3,
+      "first_name": "Alenn",
+      "last_name": "Smith",
+      "email": "allen@gmailcom"
+    }
+  ]
+}

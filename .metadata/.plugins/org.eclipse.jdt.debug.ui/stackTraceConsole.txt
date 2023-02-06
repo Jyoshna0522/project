@@ -1,0 +1,15 @@
+io.cucumber.junit.UndefinedStepException: The step 'User can enter into homepage' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User can enter into homepage")
+public void user_can_enter_into_homepage() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("User can enter into valid username {string} and password {string}")
+public void user_can_enter_into_valid_username_and_password(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+

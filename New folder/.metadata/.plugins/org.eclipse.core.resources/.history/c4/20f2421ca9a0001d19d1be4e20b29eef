@@ -1,0 +1,10 @@
+package Cucumber;
+
+public class base_class {
+
+public void Browser_lauching() {
+     System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\eclipse-workspace\\selenium\\New folder\\PRO\\Chrome\\chromedriver.exe");
+     webDriver driver= new chromedriver();
+}
+
+}

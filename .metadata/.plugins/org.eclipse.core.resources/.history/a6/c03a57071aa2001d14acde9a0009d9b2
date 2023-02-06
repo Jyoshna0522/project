@@ -1,0 +1,40 @@
+package com.practice.Nyka;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Baseclass {
+	public static WebDriver driver;
+public static void Browser_launch() {
+	System.setProperty("webdriver.chrome.driver",
+			"C:\\Users\\Admin\\eclipse-workspace\\selenium\\Project_1\\Chrome\\chromedriver.exe");
+	driver = new ChromeDriver();
+}
+public static void Maximization() {
+driver.manage().window().maximize(); 
+}
+public static void get_url(String url) {
+driver.get(url);
+}
+public static void allow_page(WebElement cc) {
+	cc.click();
+}
+
+public static void signup(WebElement ab, String values) {
+	ab.sendKeys(values);
+
+}
+
+public static void click_button(WebElement bc) {
+	bc.click();
+	  
+}
+public static void Quit_page() {
+driver.quit();
+}
+
+
+}
+

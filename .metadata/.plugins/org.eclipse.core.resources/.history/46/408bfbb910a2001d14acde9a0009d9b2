@@ -1,0 +1,93 @@
+package com.stepdefinition;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+import com.practice.Nyka.Baseclass;
+import com.practice.Nyka.pageobjectmodel;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Stepdefinition extends Baseclass {
+//	@Given("user can enter into homepage of nykaa")
+//	public void user_can_enter_into_homepage_of_nykaa() throws InterruptedException {
+//		Browser_launch();
+//		Maximization();
+//		get_url("https://www.nykaa.com");
+//		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+//		WebElement signin =driver.findElement(By.xpath("//button[text()='Sign in']"));
+//		signin.click();
+//		WebElement mob =driver.findElement(By.xpath("//button[text()='Sign in with Mobile Number']")); 
+//		mob.click();
+//	}
+//
+//	@When("user can enter the email address")
+//	public void user_can_enter_the_email_address() throws InterruptedException {
+//		WebElement mobno = driver.findElement(By.name("emailMobile"));
+//		mobno.sendKeys("8124891252");
+//		WebElement proceedbutton = driver.findElement(By.id("submitVerification"));
+//		proceedbutton.click();
+//		Thread.sleep(3000);
+//		
+//		Thread.sleep(30000);
+//		driver.findElement(By.xpath("//button[@type='submit']")).click();
+//	}
+//	@Then("Signup successfully")
+//	public void signup_successfully() {
+//		System.out.println("Logged In sucessfully");
+//		}
+//	
+//	@Given("User can select a particular product")
+//	public void user_can_select_a_particular_product() throws InterruptedException {
+//		Thread.sleep(5000);
+//		Actions sj= new Actions(driver);
+//		Thread.sleep(5000);
+//
+//		WebElement findelement = driver.findElement(By.xpath("(//a[text()='makeup'])[2]"));
+//		sj.moveToElement(findelement).perform()	;
+//		Thread.sleep(5000);
+//		}
+//
+//	@When("User can select one item")
+//	public void user_can_select_one_item() throws InterruptedException {
+//		Thread.sleep(5000);
+//	driver.findElement(By.xpath("//a[text()='Eyeliner']")).click();
+//
+//	}
+//	@Then("Add to bag")
+//	public void add_to_bag() throws InterruptedException {
+//		Thread.sleep(10000);
+//		driver.findElement(By.xpath("//div[text()='Nykaa Black Magic Liquid Eyeliner - Super Black 01']")).click();
+//		Thread.sleep(5000);
+//		
+//	}
+@Given("User can enter into homepage")
+public void user_can_enter_into_homepage() {
+	Browser_launch();
+	Maximization();
+	get_url("https://www.facebook.com/");
+}
+@When("User can enter into valid username {string} and password {string}")
+public void user_can_enter_into_valid_username_and_password(String username, String password) throws InterruptedException {
+	pageobjectmodel ab= new pageobjectmodel(driver);
+	allow_page(ab.getAllowpage());
+	signup(ab.getUsername(), username);
+	signup(ab.getPassword(), password);
+	Thread.sleep(5000);
+	click_button(ab.getClick_login());
+	Quit_page();
+
+}
+
+	
+}
+
+
+
+
